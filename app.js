@@ -82,26 +82,6 @@
       ]));
     }
 
-    // Install instructions
-    nodes.push(el('details', { class: 'card install' }, [
-      el('summary', {}, 'Add this to your home screen'),
-      el('h3', {}, 'iPhone (use Safari)'),
-      el('ol', {}, [
-        el('li', {}, 'Open this page in Safari.'),
-        el('li', {}, 'Tap the Share button (a square with an arrow pointing up).'),
-        el('li', {}, 'Scroll down and tap "Add to Home Screen".'),
-        el('li', {}, 'Tap "Add". The Healthspan icon appears on your home screen.')
-      ]),
-      el('h3', {}, 'Android (use Chrome)'),
-      el('ol', {}, [
-        el('li', {}, 'Open this page in Chrome.'),
-        el('li', {}, 'Tap the three dots menu in the top right.'),
-        el('li', {}, 'Tap "Add to Home screen" or "Install app".'),
-        el('li', {}, 'Tap "Add" or "Install". The icon appears on your home screen.')
-      ]),
-      el('p', { class: 'small' }, 'The app then opens full screen, like any other app, and lessons work without internet once loaded.')
-    ]));
-
     // Mini-course list grouped by phase
     COURSE.phases.forEach(function (phaseTitle, p) {
       var section = el('section', { class: 'phase' }, [el('h2', {}, phaseTitle)]);
