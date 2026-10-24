@@ -1,6 +1,6 @@
 // Offline support. Bump CACHE_NAME (for example to healthspan-platform-v3) whenever you change
 // any file, so phones pick up the new version.
-var CACHE_NAME = 'healthspan-platform-v5';
+var CACHE_NAME = 'healthspan-platform-v6';
 var ASSETS = [
   './',
   'index.html',
@@ -15,7 +15,7 @@ var ASSETS = [
 
 self.addEventListener('install', function (event) {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) { return cache.addAll(ASSETS); })
+    caches.open(CACHE_NAME).then(function (cache) { return cache.addAll(ASSETS.map(function (u) { return new Request(u, { cache: 'reload' }); })); })
       .then(function () { return self.skipWaiting(); })
   );
 });
