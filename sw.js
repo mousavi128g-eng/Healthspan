@@ -1,6 +1,6 @@
 // Offline support. Bump CACHE_NAME (for example to healthspan-platform-v3) whenever you change
 // any file, so phones pick up the new version.
-var CACHE_NAME = 'healthspan-platform-v3';
+var CACHE_NAME = 'healthspan-platform-v4';
 var ASSETS = [
   './',
   'index.html',
