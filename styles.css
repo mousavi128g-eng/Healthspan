@@ -18,10 +18,14 @@
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+html { font-size: 100%; }
+html.text-s { font-size: 88%; }
+html.text-l { font-size: 116%; }
+html.text-xl { font-size: 132%; }
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.45;
   color: var(--ink);
   background: var(--bg);
@@ -74,7 +78,7 @@ p { margin: 0 0 6px; }
   cursor: pointer;
   font-size: 1.1rem;
   padding: 4px 0;
-  min-height: 44px;
+  min-height: 2.75rem;
 }
 .install ol { padding-left: 24px; margin: 8px 0 0; }
 .install li { margin-bottom: 8px; }
@@ -93,7 +97,7 @@ p { margin: 0 0 6px; }
   margin-bottom: 5px;
   color: var(--ink);
   text-decoration: none;
-  min-height: 40px;
+  min-height: 2.5rem;
 }
 a.item:active { background: var(--teal-soft); }
 .item .num {
@@ -126,7 +130,7 @@ a.item:active { background: var(--teal-soft); }
 .back {
   display: inline-flex;
   align-items: center;
-  min-height: 44px;
+  min-height: 2.75rem;
   color: var(--teal-dark);
   text-decoration: none;
   font-weight: 700;
@@ -161,7 +165,7 @@ a.item:active { background: var(--teal-soft); }
   border: 2px solid var(--teal);
   border-radius: 12px;
   padding: 10px 16px;
-  min-height: 52px;
+  min-height: 3.25rem;
   cursor: pointer;
 }
 .recall-answer { margin: 12px 0 0; color: var(--ink); }
@@ -194,7 +198,7 @@ a.item:active { background: var(--teal-soft); }
   border: 0;
   border-radius: 8px;
   padding: 8px 12px;
-  min-height: 40px;
+  min-height: 2.5rem;
   cursor: pointer;
   background: var(--teal);
   color: #fff;
@@ -216,7 +220,7 @@ a.item:active { background: var(--teal-soft); }
   border: 2px solid var(--line);
   border-radius: 8px;
   padding: 8px 10px;
-  min-height: 40px;
+  min-height: 2.5rem;
   cursor: pointer;
   line-height: 1.45;
 }
@@ -237,7 +241,7 @@ a.item:active { background: var(--teal-soft); }
   text-decoration: underline;
   cursor: pointer;
   padding: 12px;
-  min-height: 44px;
+  min-height: 2.75rem;
 }
 
 a:focus-visible, button:focus-visible, .item:focus-visible {
@@ -249,6 +253,10 @@ a:focus-visible, button:focus-visible, .item:focus-visible {
   * { transition: none !important; animation: none !important; }
 }
 @media (min-width: 680px) {
-  body { font-size: 17px; }
+  body { font-size: 1.0625rem; }
 }
 
+
+.size { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: .85rem; }
+.size button { font: inherit; font-weight: 700; font-size: 1rem; background: rgba(255, 255, 255, .14); color: #fff; border: 1px solid rgba(255, 255, 255, .55); border-radius: 8px; min-height: 2.5rem; min-width: 2.5rem; padding: 0 .6rem; cursor: pointer; }
+.size button:disabled { opacity: .4; cursor: default; }

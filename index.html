@@ -22,6 +22,11 @@
   <header class="top">
     <h1>Healthspan</h1>
     <p class="sub">Health lessons that add up over a lifetime</p>
+    <div class="size" role="group" aria-label="Text size">
+      <button id="size-down" type="button" aria-label="Smaller text">A&minus;</button>
+      <button id="size-up" type="button" aria-label="Larger text">A+</button>
+      <span id="size-label"></span>
+    </div>
   </header>
 
   <main id="app"></main>
@@ -32,6 +37,35 @@
 
   <script src="content.js"></script>
   <script src="app.js"></script>
+  <script>
+    (function () {
+      var STEPS = [
+        { cls: 'text-s', label: 'Smaller' },
+        { cls: '', label: 'Standard' },
+        { cls: 'text-l', label: 'Large' },
+        { cls: 'text-xl', label: 'Extra large' }
+      ];
+      var KEY = 'healthspan.textStep';
+      var step = 1;
+      try {
+        var saved = parseInt(localStorage.getItem(KEY), 10);
+        if (saved >= 0 && saved < STEPS.length) step = saved;
+      } catch (e) {}
+      var down = document.getElementById('size-down');
+      var up = document.getElementById('size-up');
+      var label = document.getElementById('size-label');
+      function apply() {
+        document.documentElement.className = STEPS[step].cls;
+        label.textContent = STEPS[step].label;
+        down.disabled = step === 0;
+        up.disabled = step === STEPS.length - 1;
+        try { localStorage.setItem(KEY, String(step)); } catch (e) {}
+      }
+      down.addEventListener('click', function () { if (step > 0) { step--; apply(); } });
+      up.addEventListener('click', function () { if (step < STEPS.length - 1) { step++; apply(); } });
+      apply();
+    })();
+  </script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function () {
